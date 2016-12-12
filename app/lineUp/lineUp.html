@@ -1,0 +1,315 @@
+<style>
+    .btn-default-fw{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        padding: 0;
+        background-color: red;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        color: white;
+    }
+    .btn-default-mid{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        padding: 0;
+        background-color: green;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        color: white;
+    }
+    .btn-default-def{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        padding: 0;
+        background-color: blue;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        color: white;
+    }
+    .btn-default-gk{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        padding: 0;
+        background-color: orange;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        color: white;
+    }
+    .lineUp{
+        margin-top: 50px; display: inline-table;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div ng-controller="lineUpCtrl">
+    <h1 style="color: #FFF; text-align: center">Line Up</h1>
+    <div class="row">
+        <div class="col-md-8" style="text-align: center">
+            <h2 style="color: white">
+                Total:{{overall}}
+                Attack:{{attack}}
+                Defence:{{defence}}<br>
+            </h2>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Formation
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="left: 310px">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setFormation('343')">343</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setFormation('451')">451</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setFormation('433')">433</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setFormation('442')">442</a></li>
+                </ul>
+            </div>
+            <div id="343" class="lineUp" ng-show="showTFT">
+                <div>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[8])">
+                        {{teamPlayerList[8].p_name}}
+                        {{teamPlayerList[8].numberOnBack}}<br>
+                        {{teamPlayerList[8].overall}}
+                    </button>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[9])">
+                        {{teamPlayerList[9].p_name}}
+                        {{teamPlayerList[9].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[10])">
+                        {{teamPlayerList[10].p_name}}
+                        {{teamPlayerList[10].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[7])">
+                        {{teamPlayerList[7].p_name}}
+                        {{teamPlayerList[7].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[6])">
+                        {{teamPlayerList[6].p_name}}
+                        {{teamPlayerList[6].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[5])">
+                        {{teamPlayerList[5].p_name}}
+                        {{teamPlayerList[5].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[4])">
+                        {{teamPlayerList[4].p_name}}
+                        {{teamPlayerList[4].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[1])">
+                        {{teamPlayerList[1].p_name}}
+                        {{teamPlayerList[1].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[2])">
+                        {{teamPlayerList[2].p_name}}
+                        {{teamPlayerList[2].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[3])">
+                        {{teamPlayerList[3].p_name}}
+                        {{teamPlayerList[3].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-gk" ng-click="changePlayer(teamPlayerList[0])">
+                        {{teamPlayerList[0].p_name}}
+                        {{teamPlayerList[0].numberOnBack}}
+                    </button>
+                </div>
+            </div>
+            <div id="451" class="lineUp" ng-show="showFFO">
+                <div>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[10])">
+                        {{teamPlayerList[10].p_name}}<br>
+                        {{teamPlayerList[10].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[9])">
+                        {{teamPlayerList[9].p_name}}<br>
+                        {{teamPlayerList[9].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[8])">
+                        {{teamPlayerList[8].p_name}}<br>
+                        {{teamPlayerList[8].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[7])">
+                        {{teamPlayerList[7].p_name}}<br>
+                        {{teamPlayerList[7].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[6])">
+                        {{teamPlayerList[6].p_name}}<br>
+                        {{teamPlayerList[6].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[5])">
+                        {{teamPlayerList[5].p_name}}<br>
+                        {{teamPlayerList[5].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[1])">
+                        {{teamPlayerList[1].p_name}}<br>
+                        {{teamPlayerList[1].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[2])">
+                        {{teamPlayerList[2].p_name}}<br>
+                        {{teamPlayerList[2].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[3])">
+                        {{teamPlayerList[3].p_name}}<br>
+                        {{teamPlayerList[3].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[4])">
+                        {{teamPlayerList[4].p_name}}<br>
+                        {{teamPlayerList[4].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-gk" ng-click="changePlayer(teamPlayerList[0])">
+                        {{teamPlayerList[0].p_name}}<br>
+                        {{teamPlayerList[0].numberOnBack}}
+                    </button>
+                </div>
+            </div>
+            <div id="433" class="lineUp" ng-show="showFTT">
+                <div>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[8])">
+                        {{teamPlayerList[8].p_name}}<br>
+                        {{teamPlayerList[8].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[9])">
+                        {{teamPlayerList[9].p_name}}<br>
+                        {{teamPlayerList[9].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[10])">
+                        {{teamPlayerList[10].p_name}}<br>
+                        {{teamPlayerList[10].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[7])">
+                        {{teamPlayerList[7].p_name}}<br>
+                        {{teamPlayerList[7].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[6])">
+                        {{teamPlayerList[6].p_name}}<br>
+                        {{teamPlayerList[6].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[5])">
+                        {{teamPlayerList[5].p_name}}<br>
+                        {{teamPlayerList[5].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[1])">
+                        {{teamPlayerList[1].p_name}}<br>
+                        {{teamPlayerList[1].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[2])">
+                        {{teamPlayerList[2].p_name}}<br>
+                        {{teamPlayerList[2].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[3])">
+                        {{teamPlayerList[3].p_name}}<br>
+                        {{teamPlayerList[3].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[4])">
+                        {{teamPlayerList[4].p_name}}<br>
+                        {{teamPlayerList[4].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-gk" ng-click="changePlayer(teamPlayerList[0])">
+                        {{teamPlayerList[0].p_name}}<br>
+                        {{teamPlayerList[0].numberOnBack}}
+                    </button>
+                </div>
+            </div>
+            <div id="442" class="lineUp" ng-show="showFFT">
+                <div>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[9])">
+                        {{teamPlayerList[9].p_name}}<br>
+                        {{teamPlayerList[9].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-fw" ng-click="changePlayer(teamPlayerList[10])">
+                        {{teamPlayerList[10].p_name}}<br>
+                        {{teamPlayerList[10].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[8])">
+                        {{teamPlayerList[8].p_name}}<br>
+                        {{teamPlayerList[8].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[7])">
+                        {{teamPlayerList[7].p_name}}<br>
+                        {{teamPlayerList[7].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[6])">
+                        {{teamPlayerList[6].p_name}}<br>
+                        {{teamPlayerList[6].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-mid" ng-click="changePlayer(teamPlayerList[5])">
+                        {{teamPlayerList[5].p_name}}<br>
+                        {{teamPlayerList[5].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[1])">
+                        {{teamPlayerList[1].p_name}}<br>
+                        {{teamPlayerList[1].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[2])">
+                        {{teamPlayerList[2].p_name}}<br>
+                        {{teamPlayerList[2].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[3])">
+                        {{teamPlayerList[3].p_name}}<br>
+                        {{teamPlayerList[3].numberOnBack}}
+                    </button>
+                    <button type="button" class="btn btn-default-def" ng-click="changePlayer(teamPlayerList[4])">
+                        {{teamPlayerList[4].p_name}}<br>
+                        {{teamPlayerList[4].numberOnBack}}
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default-gk" ng-click="changePlayer(teamPlayerList[0])">
+                        {{teamPlayerList[0].p_name}}<br>
+                        {{teamPlayerList[0].numberOnBack}}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="margin-top: 50px; text-align: center">
+            <table class="table table-hover">
+                <tr>
+                    <td style="text-align: center">Number</td>
+                    <td style="text-align: center">Name</td>
+                    <td style="text-align: center">Ability</td>
+                    <td style="text-align: center">Position</td>
+                </tr>
+                <tr ng-repeat="x in teamPlayerList.slice(11, 22)" ng-click="changePlayer(x)" style="cursor: pointer">
+                    <td style="text-align: center">{{x.numberOnBack}}</td>
+                    <td style="text-align: center">{{x.p_name}}</td>
+                    <td style="text-align: center">{{x.overall}}</td>
+                    <td style="text-align: center">{{x.position}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div style="text-align: center">
+        <a href="#!/battle" ng-click="commitLineUp()">
+            <i class="fa fa-arrow-right" style="color: white; font-size: 70px"></i>
+        </a>
+    </div>
+
+</div>

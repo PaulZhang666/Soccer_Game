@@ -1,0 +1,41 @@
+/* app css stylesheet */
+html, body{
+  overflow-x: hidden;
+  margin: 0;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: Black;
+}
+.table>tbody>tr>td{
+  border-top: none;
+  height: 20px;
+  max-width: 30px;
+  color: white;
+}
+.header-background{
+  background-image: url(components/image/main_background.jpg);
+  background-size: cover;
+  background-position-x: 50%;
+  position: absolute;
+  height: 900px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.btn-default{
+  width: 100px; height: 100px; font-weight: bold;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.btn-explain{
+  font-weight: bold;
+  color: #FFF;
+  margin-left: 20px;
+  font-size: large
+}
+
+

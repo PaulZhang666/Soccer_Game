@@ -1,0 +1,84 @@
+<div ng-controller="playersCtrl" style="text-align: center">
+    <div id="playerModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{uplayer.p_name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Overall</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="inputEmail3" ng-model="uplayer.overall">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="inputEmail2" class="col-sm-2 control-label">Attack</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="inputEmail2" ng-model="uplayer.attack">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="inputEmail1" class="col-sm-2 control-label">Defence</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="inputEmail1" ng-model="uplayer.defence">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal" ng-click="saveUpdate(uplayer)">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <h1 style="color: #FFF; text-align: center">Players List</h1>
+    <div class="col-md-7" style="text-align: center">
+        <table class="table table-hover">
+            <tr>
+                <td>Refer</td>
+                <td ng-click="setPlayerOrder('p_name')" style="cursor: pointer">Name</td>
+                <td ng-click="setPlayerOrder('numberOnBack')" style="cursor: pointer">Number</td>
+                <td ng-click="setPlayerOrder('age')" style="cursor: pointer">Age</td>
+                <td ng-click="setPlayerOrder('overall')" style="cursor: pointer">Ability</td>
+                <td ng-click="setPlayerOrder('position')" style="cursor: pointer">Position</td>
+                <td ng-click="setPlayerOrder('foot')" style="cursor: pointer">Foot</td>
+                <td style="cursor: pointer">Update</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-7" style="max-height: 550px; overflow: auto; text-align: center">
+        <table class="table table-hover">
+            <!--tr>
+                <td>Refer</td>
+                <td ng-click="setPlayerOrder('p_name')" style="cursor: pointer">Name</td>
+                <td ng-click="setPlayerOrder('numberOnBack')" style="cursor: pointer">Number</td>
+                <td ng-click="setPlayerOrder('age')" style="cursor: pointer">Age</td>
+                <td ng-click="setPlayerOrder('overall')" style="cursor: pointer">Ability</td>
+                <td ng-click="setPlayerOrder('position')" style="cursor: pointer">Position</td>
+                <td ng-click="setPlayerOrder('foot')" style="cursor: pointer">Foot</td>
+                <td style="cursor: pointer">Update</td>
+            </tr-->
+            <tr ng-repeat="x in playerList | orderBy:playerOrder" ng-mouseenter="calRadar(x)">
+                <td><input type="radio" id="referCheck" ng-model="refer" name="referCheck" ng-click="setRefer(x)"></td>
+                <td>{{x.p_name}}</td>
+                <td>{{x.numberOnBack}}</td>
+                <td>{{x.age}}</td>
+                <td>{{x.overall}}</td>
+                <td>{{x.position}}</td>
+                <td>{{x.foot}}</td>
+                <td><button type="button" data-toggle="modal" data-target="#playerModal" ng-click="updatePlayer(x)"></button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-5" id="radarGraph" style="width: 360px;height:340px;color: white; text-align: center">
+
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+<style>
+    html{
+        overflow-y: auto;
+    }
+    td{
+        text-align: center;
+        width: 50px;
+    }
+</style>
+
+<div ng-controller="knockoffCtrl">
+    <div style="margin: 20px 50px">
+        <h1 style="color: #FFF; text-align: center">
+            Knockoff Phase!
+        </h1>
+        <table class="table" style="border: 0">
+            <tr>
+                <!--1--><td style="background-color: #FFF"><img src="{{position_1}}" style="height: 30px"></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #FFF"><img src="{{position_9}}" style="height: 30px"></td>
+            </tr>
+            <tr>
+                <!--2--><td></td><td style="background-color: #FFF"><img src="{{knock8_1}}" style="height: 30px" ng-show="show_8"></td><td></td><td></td><td></td><td style="background-color: #FFF"><img src="{{knock8_5}}" style="height: 30px" ng-show="show_8"></td><td></td>
+            </tr>
+            <tr>
+                <!--3--><td style="background-color: #FFF"><img src="{{position_2}}" style="height: 30px"></td><td style="border-right: 1px solid #FFF"></td><td></td><td></td><td style="border-right: 1px solid #FFF"></td><td></td><td style="background-color: #FFF"><img src="{{position_10}}" style="height: 30px"></td>
+            </tr>
+            <tr>
+                <!--4--><td></td><td></td><td style="background-color: #FFF"><img src="{{knock4_1}}" style="height: 30px" ng-show="show_4"></td><td></td><td style="background-color: #FFF"><img src="{{knock4_3}}" style="height: 30px" ng-show="show_4"></td><td></td><td></td>
+            </tr>
+            <tr>
+                <!--5--><td style="background-color: #FFF"><img src="{{position_3}}" style="height: 30px"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td></td><td style="background-color: #FFF"><img src="{{position_11}}" style="height: 30px"></td>
+            </tr>
+            <tr>
+                <!--6--><td></td><td style="background-color: #FFF"><img src="{{knock8_2}}" style="height: 30px" ng-show="show_8"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td></td><td style="background-color: #FFF"><img src="{{knock8_6}}" style="height: 30px" ng-show="show_8"></td><td></td>
+            </tr>
+            <tr>
+                <!--7--><td style="background-color: #FFF"><img src="{{position_4}}" style="height: 30px"></td><td></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td></td><td></td><td style="background-color: #FFF"><img src="{{position_12}}" style="height: 30px"></td>
+            </tr>
+            <tr>
+                <!--8--><td></td><td></td><td></td><td style="background-color: #FFF"><img src="{{knock2_1}}" style="height: 30px" ng-show="show_2"><img src="{{knock2_2}}" style="height: 30px" ng-show="show_2"></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <!--9--><td style="background-color: #FFF"><img src="{{position_5}}" style="height: 30px"></td><td></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td></td><td></td><td style="background-color: #FFF"><img src="{{position_13}}" style="height: 30px"></td>
+            </tr>
+            <tr>
+                <!--10--><td></td><td style="background-color: #FFF"><img src="{{knock8_3}}" style="height: 30px" ng-show="show_8"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td></td><td style="background-color: #FFF"><img src="{{knock8_7}}" style="height: 30px" ng-show="show_8"></td><td></td>
+            </tr>
+            <tr>
+                <!--11--><td style="background-color: #FFF"><img src="{{position_6}}" style="height: 30px"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td style="border-right: 1px solid #FFF"></td><td></td><td style="background-color: #FFF"><img src="{{position_14}}" style="height: 30px"></td>
+            </tr>
+            <tr>
+                <!--12--><td></td><td></td><td style="background-color: #FFF"><img src="{{knock4_2}}" style="height: 30px" ng-show="show_4"></td><td></td><td style="background-color: #FFF"><img src="{{knock4_4}}" style="height: 30px" ng-show="show_4"></td><td></td><td></td>
+            </tr>
+            <tr>
+                <!--13--><td style="background-color: #FFF"><img src="{{position_7}}" style="height: 30px"></td><td style="border-right: 1px solid #FFF"></td><td></td><td></td><td style="border-right: 1px solid #FFF"></td><td></td><td style="background-color: #FFF"><img src="{{position_15}}" style="height: 30px"></td>
+            </tr>
+            <tr>
+                <!--14--><td></td><td style="background-color: #FFF"><img src="{{knock8_4}}" style="height: 30px" ng-show="show_8"></td><td></td><td></td><td></td><td style="background-color: #FFF"><img src="{{knock8_8}}" style="height: 30px" ng-show="show_8"></td><td></td>
+            </tr>
+            <tr>
+                <!--15--><td style="background-color: #FFF"><img src="{{position_8}}" style="height: 30px"></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #FFF"><img src="{{position_16}}" style="height: 30px"></td>
+            </tr>
+        </table>
+        <div style="text-align: center">
+            <a href="#!/battle">
+                <button type="button" class="btn btn-default" ng-click="goBattle()">
+                    GO!
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

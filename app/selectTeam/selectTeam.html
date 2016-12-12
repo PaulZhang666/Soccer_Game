@@ -1,0 +1,25 @@
+<div ng-controller="selectTeamCtrl">
+    <div style="margin: 50px 27% 50px 50px">
+        <h1 style="color: #FFF; margin-left: 320px">
+            Select A Team!
+        </h1>
+        <div style="max-height: 550px; overflow: auto">
+            <table class="table table-hover" style="color: #FFF; font-weight: bold">
+                <thead style="font-size: large">
+                <tr>
+                    <td style="vertical-align: middle; text-align: center">LOGO</td>
+                    <td style="vertical-align: middle; text-align: center; cursor:pointer" ng-click="setTeamOrder('name')">NAME</td>
+                    <td style="vertical-align: middle; text-align: center; cursor:pointer" ng-click="setTeamOrder('overall')">ABILITY</td>
+                </tr>
+                </thead>
+                <tbody style="font-size: large">
+                <tr href="#!/knockoff" ng-repeat="x in teamList|orderBy:teamOrder" style="cursor: pointer" ng-click="setInitialTeam(x)">
+                    <td style="vertical-align: middle; text-align: center"><img src="{{x.logo}}" style="height: 70px"></td>
+                    <td style="vertical-align: middle; text-align: center">{{x.c_name}}</td>
+                    <td style="vertical-align: middle; text-align: center">{{x.overall}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

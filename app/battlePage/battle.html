@@ -1,0 +1,44 @@
+<div ng-controller="battleCtrl" style="margin-top: 100px; text-align: center">
+    <h1 style="color: #FFF">{{knockoff_state}}</h1>
+    <table class="table">
+        <tr>
+            <td style="width: 200px"><img src="{{position_1}}" style="height: 200px"></td>
+            <td style="font-size: -webkit-xxx-large; color: #FFF; vertical-align: middle; width: 80px">{{point_1}}<br>{{point_3}}</td>
+            <td style="font-size: -webkit-xxx-large; color: #FFF; vertical-align: middle; width: 80px">{{point_2}}<br>{{point_4}}</td>
+            <td style="width: 200px"><img src="{{position_2}}" style="height: 200px"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2 style="color: white">
+                    Total:{{overall_0}}
+                    Attack:{{attack_0}}
+                    Defence:{{defence_0}}<br>
+                </h2>
+            </td>
+            <td><td></td></td>
+            <td>
+                <h2 style="color: ghostwhite">
+                    Total:{{overall_1}}
+                    Attack:{{attack_1}}
+                    Defence:{{defence_1}}<br>
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-home" style="color: white; font-size: xx-large" ng-show="home_0"></i></td>
+            <td></td><td></td>
+            <td><i class="fa fa-home" style="color: white; font-size: xx-large" ng-show="home_1"></i></td>
+        </tr>
+    </table>
+    <div style="text-align: center; vertical-align: middle">
+        <a href="#!/lineUp">
+            <button type="button" class="btn btn-default" ng-click="">
+                Change<br>Player!
+            </button>
+        </a>
+        <button type="button" class="btn btn-default" ng-click="calResult()">
+            Battle!
+        </button>
+        <!--i class="fa fa-arrow-right" style="float: right; margin-right: 70px; color: white; font-size: 70px"></i-->
+    </div>
+</div>
