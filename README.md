@@ -1,0 +1,2 @@
+# Soccer_Game
+In this project, we implemented a football manager system with HTML, JavaScript and MySQL. In the system we are able to manage the data of football clubs in knockout phase and players in these clubs, including teams’ attack, defense and players’ age and ability. The match will be played automatically based on the ability of the whole team. The game player can choose a team, alter the lineup as the manager then compete to win the champion.
